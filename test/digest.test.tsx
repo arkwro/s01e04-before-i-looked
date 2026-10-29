@@ -29,6 +29,13 @@ afterEach(() => {
 });
 
 describe('readNight', () => {
+  it('reads the sample night with five jobs and one malformed line', () => {
+    const digest = readNight('runs', '2026-10-28');
+
+    expect(digest?.rows).toHaveLength(5);
+    expect(digest?.malformedLines).toBe(1);
+  });
+
   it('aggregates jobs, retains null owners and counts malformed lines', () => {
     const runsDir = makeRunsDir();
     writeNight(
