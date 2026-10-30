@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-10-30
 ---
 
 # Morning digest
@@ -77,3 +78,17 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | Run log reader | — | OpenCode · litellm/gpt-6-luna · standard | 2026-10-29 |
+| 2 | Digest page: GET /digest/:night | #1 | OpenCode · litellm/gpt-6-luna · standard | 2026-10-29 |
+| 3 | Digest JSON: GET /api/digest/:night | #1 | OpenCode · litellm/gpt-6-luna · standard | 2026-10-29 |
+| 4 | Status board: link nights to digests | #1, #2 | OpenCode · litellm/gpt-6-luna · standard | 2026-10-29 |
+| 5 | Digest route tests | #2, #3 | OpenCode · litellm/gpt-6-luna · standard | 2026-10-29 |
+| 6 | Preview the morning digest for review | #1–#5 | OpenCode · litellm/gpt-6-luna · standard | 2026-10-30 |
+| 7 | Remove marker and archive plan | #6, reviewer acceptance | GitHub Copilot CLI · claude-sonnet-5.5 · standard | 2026-10-30 |
+
+The first preview was committed to `main` (60b7d84), against ADR 0003. It moved to a separate repo and its marker came off on 2026-10-30, after the review. The marked page is still in the history of 60b7d84.
